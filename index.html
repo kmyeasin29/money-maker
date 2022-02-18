@@ -14,49 +14,57 @@
 
 <body>
     <h1 class="text-center text-primary mt-5 mb-4">Your Secured Future</h1>
-    <section class="container">
+    <section class="container border border-info mb-3">
         <div class="row">
             <div class="col-lg-6 col-sm-12 mt-4">
-                <img class="img-fluid" src="images/money.jpg" alt="">
+                <img class="img-fluid h-100" src="images/money.jpg" alt="">
             </div>
             <div class="col-lg-6 col-sm-12 mt-4">
 
-                <form action="" class="text-center bg-light pt-3 pb-3 mb-5">
+                <form action="" class="text-center bg-light pt-3 pb-3 mb-5 w-100">
                     <h6 class="text-center mb-4">Your Monthly Income</h6>
                     <!-- income -->
                     <div class="mb-3">
                         <label for="" class="mx-3">Income:</label>
-                        <input type="" class="" id="" placeholder="10000">
+                        <input type="text" class="" id="income-value">
                     </div>
                     <!-- Monthly cost -->
                     <h6 class="text-center">Expenses</h6>
-                    <div class="mb-3">
+                    <div class="mb-3 ">
                         <label for="" class="mx-3">Food:</label>
-                        <input type="" class="" id="" placeholder="3000">
+                        <input type="text" class="" id="food-cost">
                     </div>
                     <div class="mb-3">
                         <label for="" class="mx-3">Rent:</label>
-                        <input type="" class="" id="" placeholder="2000">
+                        <input type="text" class="" id="rent-cost">
                     </div>
                     <div class="mb-3">
                         <label for="" class="mx-3">Clothes:</label>
-                        <input type="" class="" id="" placeholder="500">
+                        <input type="text" id="clothes-cost">
                     </div>
-                    <button type="button" class="btn btn-primary mb-3">Calculate</button>
+                    <button type="button" class="btn btn-primary mb-3" onclick="calculate()">Calculate</button>
                     <div class="mb-3">
-                        <h6 class="text-center">Total Expenses: <span>5500</span></h6>
-                        <h6 class="text-center">Balance: <span>4500</span></h6>
+                        <h6 class="text-center">Total Expenses: <span id="expenses-output">00</span></h6>
+                        <h6 class="text-center">Balance: <span id="balance-output">00</span></h6>
                     </div>
-                    <!-- Percentage -->
-                    <div class="text-center">
-                        <label for="" class="">Save:</label>
-                        <input type="number" class="" id="" placeholder="20"><span>%</span>
-                        <button type="button" class="btn btn-primary">Save</button>
+                    <!--Saving Percentage -->
+                    <div>
+                        <div class="text-center">
+                            <label for="" class="">Save:</label>
+                            <input type="text" class="" id="percentage-value"><span>%</span>
+                            <button type="button" class="btn btn-primary" onclick="save()">Save</button>
+                        </div>
                     </div>
 
-                    <h6 class="text-center">Saving amount: <span>2000</span></h6>
-                    <h6 class="text-center">Remaining Balance: <span>2500</span></h6>
+
+                    <h6 class="text-center">Saving amount: <span id="saving-value">00</span></h6>
+                    <h6 class="text-center">Remaining Balance: <span id="remaining-value">00</span></h6>
                 </form>
+            </div>
+            <div>
+                <p class="d-none" id="error-notice">Please press correct input... </p>
+                <p class="d-none" id="error-alert">Don't try to lead luxurious life. Your salary is lower than
+                    leaving cost. </p>
             </div>
     </section>
 
@@ -65,9 +73,8 @@
 
 
 
-
     <!-- My Custom Javascript -->
-    <script src="assignment.js"></script>
+    <script src="script.js"></script>
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
